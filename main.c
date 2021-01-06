@@ -19,6 +19,7 @@
  int div(int nombre1, int nombre2);
 
 
+int sous(int nb1, int nb2);
 
 /*
  * \main
@@ -37,9 +38,11 @@ int main(int argc, char *argv[]) {
     //printf("\n vous avez tapé : %i",c);
 
     //inverse ascii vers char
+    /*
     printf("\n Entrez un nombre : ");
     scanf("%i", &vide);
     printf("vous avez tapé : %c",vide);
+     */
 
     /*
      * function pyramide
@@ -71,44 +74,85 @@ int main(int argc, char *argv[]) {
     }
      */
 
-    /* autre exo
-    printf("Entrez 1 multi ou 2 div ou 3  somme  : ");
+    printf("[1] multi \n");
+    printf("[2] div \n");
+    printf("[3]somme\n");
+    printf("[4] soustraction\n");
+    printf("Entrez votre choix d'operation :");
     scanf("%d", &choix);
-    printf("Entrez un 1er nombre : ");
+    printf("Entrez un nombre :");
     scanf("%d", &nb1);
-    printf("Entrez un 2eme nombre : ");
+    printf("Entrez un second nombre : ");
     scanf("%d", &nb2);
     switch (choix) {
         case 1:
             new = multi(nb1, nb2);
-            printf("La multi  est %d\n", new);
+            printf("%d * %d =  %d\n",nb1,nb2, new);
             break ;
         case 2:
             new = div(nb1,nb2);
-            printf("La div  est %d\n", new);
+            printf("%d / %d =  %d\n",nb1,nb2, new);
             break;
         case 3:
             new = somme(nb1,nb2);
-            printf("La somme de ces nombres est %d\n", new);
+            printf("%d + %d =  %d\n",nb1,nb2, new);
             break;
+        case 4:
+            new = sous(nb1,nb2);
+            printf("%d - %d = %d\n",nb1,nb2, new);
+            break;
+        default:
+            printf("Erreur relance l'app");
     }
-    */
+
+
+    /*
+    int i = 1;
+    int j;
+    int valeur;
+    while (i <= 12) {
+        printf("%d", i);
+        j = 1;
+        while (j <= 12){
+            valeur = i*j;
+            printf("\t%d",valeur);
+            j++;
+        }
+        printf("\n");
+        i++;
+    }
+     */
+
+
+
     return 0;
 }
 
-somme(int nombre1, int nombre2) {
+
+
+int somme(int nombre1, int nombre2) {
     int resultat;
     resultat = nombre1 + nombre2 ;
     return resultat;
 
 }
-multi(int nombre1, int nombre2) {
+
+
+int sous(int nombre1, int nombre2) {
+    int resultat;
+    resultat = nombre1 - nombre2 ;
+    return resultat;
+
+}
+
+
+int multi(int nombre1, int nombre2) {
     int resultat;
     resultat = nombre1 * nombre2 ;
     return resultat;
 
 }
-div(int nombre1, int nombre2) {
+int div(int nombre1, int nombre2) {
     int resultat;
     resultat = nombre1 / nombre2 ;
     return resultat;
